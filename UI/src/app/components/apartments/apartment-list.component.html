@@ -1,0 +1,51 @@
+<h3 style="color: lightgrey">{{title}}</h3>
+
+<table class="table">
+  <thead>
+    <th>Номер квартиры</th>
+    <th>Площадь</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of entityList">
+    <td>{{item.id}}</td>
+    <td>{{item.size}}</td>
+    <td><button class="btn btn-lg btn-outline-primary" (click)="modalFormOpen(content, item)">Заказать просмотр</button></td>
+    <!--<td><a href="#" (click)="requests(item.id)"><span>Заказать просмотр</span></a></td>-->
+  </tr>
+  </tbody>
+</table>
+<span style="color: darkgreen">{{orderStatus}}</span>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Заказать просмотр квартиры {{currentApartment?.id}}</h4>
+    <button type="button" class="close" aria-label="Отменить" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form>
+      <div class="form-group">
+        <label for="fio">Имя</label>
+        <input type="text" class="form-control" id="fio" name="fio" placeholder="Введите имя" [(ngModel)]="order.fio">
+      </div>
+      <div class="form-group">
+        <label for="tel">Телефон</label>
+        <input type="tel" class="form-control" id="tel" name="tel" placeholder="Введите телефон" [(ngModel)]="order.tel">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Введите Email" [(ngModel)]="order.email">
+      </div>
+      <button [disabled]="(!order.tel) && (!order.email)" class="btn btn-lg btn-outline-primary" (click)="sendOrder(currentApartment); c('Order sended')">Отправить заказ</button>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Отменить</button>
+  </div>
+</ng-template>
+<!--<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>-->
+

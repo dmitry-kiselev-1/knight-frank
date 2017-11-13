@@ -1,0 +1,16 @@
+.git\
+.idea\
+#e2e\
+node_modules\
+#src\
+#.editorconfig
+.gitignore
+DockerStart.cmd
+karma.conf.js
+protractor.conf.js
+package.json
+package-lock.json
+tsconfig.json
+tslint.json
+#README.md
+#npm-debug.log

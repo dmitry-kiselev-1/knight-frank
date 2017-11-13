@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "PostgreSQL": {
+    "name": "PostgreSQL",
+    "connector": "postgresql",
+    "host": "GameStation",
+    "port": 5432,
+    "url": "postgres://postgres:password@GameStation:5432/postgres",
+    "database": "postgres",
+    "password": "password",
+    "user": "postgres"
+  }
+}
