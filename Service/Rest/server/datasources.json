@@ -6,11 +6,11 @@
   "PostgreSQL": {
     "name": "PostgreSQL",
     "connector": "postgresql",
-    "host": "GameStation",
+    "host": "localhost",
     "port": 5432,
-    "url": "postgres://postgres:password@GameStation:5432/postgres",
+    "url": "postgres://postgres@localhost:5432/postgres",
     "database": "postgres",
-    "password": "password",
+    "password": "",
     "user": "postgres"
   }
 }
