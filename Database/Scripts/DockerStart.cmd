@@ -1,2 +1,2 @@
-docker run --name knight-frank-postgreSQL -e POSTGRES_PASSWORD=password -d postgres
+docker run --name knight-frank-postgres -d -p 5432:5432 postgres
 pause
