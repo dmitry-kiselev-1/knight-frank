@@ -1,3 +1,6 @@
+ALTER USER postgres
+	PASSWORD 'password';
+
 /*
 drop index IX_Apartment_ID;
 drop table Apartment;

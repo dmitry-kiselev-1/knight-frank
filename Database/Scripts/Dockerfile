@@ -38,9 +38,13 @@ ENV LANG en_US.utf8
 
 RUN mkdir /docker-entrypoint-initdb.d
 
-COPY docker-entrypoint-initdb.d/db-init.sh /docker-entrypoint-initdb.d/
+# COPY docker-entrypoint-initdb.d/db-init.sh /docker-entrypoint-initdb.d/
 # COPY createModel.sql /docker-entrypoint-initdb.d/
 # COPY generateTestData.sql /docker-entrypoint-initdb.d/
+
+COPY db-init.sh 
+RUN db-init.sh
+
 
 RUN set -ex; \
 # pub   4096R/ACCC4CF8 2011-10-13 [expires: 2019-07-02]
