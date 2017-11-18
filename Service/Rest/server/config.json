@@ -1,6 +1,6 @@
 {
   "restApiRoot": "/api",
-  "host": "localhost",
+  "host": "kf-api",
   "port": 3000,
   "remoting": {
     "context": false,

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+docker run -it --rm --link kf-postgres:postgres postgres psql -h postgres -U postgres
+
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
 
 ALTER USER postgres

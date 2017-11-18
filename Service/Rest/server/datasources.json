@@ -6,7 +6,7 @@
   "PostgreSQL": {
     "name": "PostgreSQL",
     "connector": "postgresql",
-    "host": "localhost",
+    "host": "kf-postgres",
     "port": 5432,
     "database": "postgres",
     "password": "password",

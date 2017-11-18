@@ -1,4 +1,4 @@
-docker build -t knight-frank-node-ui .
-docker run -p 4200:4200 --name knight-frank-node-ui -d knight-frank-node-ui
+docker build -t kf-ui .
+docker run -p 4200:4200 --name kf-ui --link kf-api:kf-api --net intranet -d kf-ui
 
 pause
