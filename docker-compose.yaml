@@ -1,37 +1,36 @@
 version: '3.3'
 services:
 
-    database:
-        container_name: knight-frank-database
+    postgres:
+        container_name: kf-postgres
         image: postgres
         ports:
             - "5432:5432"
         environment:
-            #POSTGRES_USER: db_user
-            #POSTGRES_DB: db
             POSTGRES_PASSWORD: password
         networks:
-            skynet:            
+            - backend
       
-    service:
-        container_name: knight-frank-service
+    api:
+        container_name: kf-api
         build: ./Service/Rest
         ports:
             - "3000:3000"
         networks:
-            skynet:            
+            - backend
         depends_on: 
-            - database            
+            - postgres
 
     ui:
-        container_name: knight-frank-ui
+        container_name: kf-ui
         build: ./ui
         ports:
             - "4200:4200"
         networks:
-            skynet:            
+            - frontend
         depends_on: 
-            - service            
+            - api
 
 networks:
-    skynet:
+  frontend:
+  backend:
