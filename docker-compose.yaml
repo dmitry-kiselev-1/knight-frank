@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.2'
 services:
 
     postgres:
@@ -25,7 +25,7 @@ services:
 
     ui:
         container_name: kf-ui
-        build: ./ui/nginx
+        build: ./UI/nginx
         ports:
             - "8080:80"
         restart: always
@@ -36,7 +36,7 @@ services:
             
     # ui:
         # container_name: kf-ui
-        # build: ./ui
+        # build: ./UI
         # ports:
             # - "4200:4200"
         # restart: always
