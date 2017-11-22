@@ -27,7 +27,7 @@ services:
         container_name: kf-ui
         build: ./UI/nginx
         ports:
-            - "8080:80"
+            - "80:80"
         restart: always
         networks:
             - frontend
@@ -38,7 +38,7 @@ services:
         # container_name: kf-ui
         # build: ./UI
         # ports:
-            # - "4200:4200"
+            # - "80:4200"
         # restart: always
         # networks:
             # - frontend
