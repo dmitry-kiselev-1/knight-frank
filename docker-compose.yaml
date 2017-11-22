@@ -6,6 +6,7 @@ services:
         image: postgres
         ports:
             - "5432:5432"
+        restart: always
         environment:
             POSTGRES_PASSWORD: password
         networks:
@@ -16,6 +17,7 @@ services:
         build: ./Service/Rest
         ports:
             - "3000:3000"
+        restart: always
         networks:
             - backend
         depends_on: 
@@ -23,13 +25,25 @@ services:
 
     ui:
         container_name: kf-ui
-        build: ./ui
+        build: ./ui/nginx
         ports:
-            - "4200:4200"
+            - "8080:80"
+        restart: always
         networks:
             - frontend
         depends_on: 
             - api
+            
+    # ui:
+        # container_name: kf-ui
+        # build: ./ui
+        # ports:
+            # - "4200:4200"
+        # restart: always
+        # networks:
+            # - frontend
+        # depends_on: 
+            # - api
 
 networks:
   frontend:
